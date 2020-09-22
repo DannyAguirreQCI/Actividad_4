@@ -53,3 +53,58 @@ int main(){
         }
     }
 }
+void mostrar(int n, char arreglo[]){
+    int cont;
+    for(cont=0; cont<n; cont++){
+        printf("%s \n",arreglo);
+    }
+}
+
+int personajes(){
+    int eleccion=0,i;
+    struct personaje
+    {
+        char nombre[20];
+        char tipo[20];
+        int fuerza;
+        int salud;
+    };
+
+    struct personaje monos[5];
+    while (eleccion!=3)
+    {
+
+        printf("\n--------Menu de personajes--------\n");
+        printf(" \t1.Editar personaje\n \t2.Mostrar personaje\n \t3.SALIR\n Elige tu opcion: ");
+        scanf("%i",&eleccion);
+        switch (eleccion)
+        {
+        case 1: {printf("\n\tCual quieres editar?: ");
+                scanf("%i",&i);
+                i--;
+                printf("\n\t-Cual es su nombre?: ");
+                scanf("%s",&monos[i].nombre);
+                printf("\t-Cual es su tipo?: ");
+                scanf("%s",&monos[i].tipo);
+                printf("\t-Cuanta es su fuerza?: ");
+                scanf("%i",&monos[i].fuerza);
+                printf("\t-Cuanta es su salud?: ");
+                scanf("%i",&monos[i].salud);
+                break;}
+        case 2: {printf("\n\tCual quieres mostrar?: ");
+                scanf("%i",&i);
+                i--;
+                printf("\n\tNombre: %s\n",monos[i].nombre);
+                printf("\n\tTipo: %s\n",monos[i].tipo);
+                printf("\n\tFuerza: %i\n",monos[i].fuerza);
+                printf("\n\tSalud: %i\n",monos[i].salud);
+                break;}
+        case 3: exit(0);
+        default: {printf("\nOpcion no valida, vuelve a intentarlo\n");
+                break;}
+        }
+    }
+}
+
+
+
